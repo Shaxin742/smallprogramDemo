@@ -1,0 +1,17 @@
+<view class="section">
+  <scroll-view
+    scroll-y
+    bindscrolltoupper="upper"
+    bindscrolltolower="lower"
+    bindscroll="scroll"
+    scroll-into-view="{{toView}}"
+    scroll-top="{{scrollTop}}"
+  >
+    <view id="green" wx:for="{{datas}}" wx:key="{{index}}">{{item}}</view>
+  </scroll-view>
+
+  <!-- <view class="btn-area">
+    <button size="mini" bindtap="tap">click me to scroll into view</button>
+    <button size="mini" bindtap="tapMove">click me to scroll</button>
+  </view> -->
+</view>

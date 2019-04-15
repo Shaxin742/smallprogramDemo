@@ -1,0 +1,7 @@
+
+<view>
+{{val}}
+  <fs-com 
+  propC="{{dataC}}"
+  bind:myevent="emitData"/>
+</view>

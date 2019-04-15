@@ -1,0 +1,75 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/echarts/echarts",
+    "pages/newpage/newpage",
+    "pages/bdmap/bdmap",
+    "pages/projects/projects",
+    "pages/logs/logs",
+    "pages/bangdan/bangdan",
+    "pages/gdmap/gdmap",
+    "pages/txmap/txmap",
+
+    "pages/charts/bar/index",
+    "pages/charts/measureText/index",
+    "pages/charts/line/index",
+    "pages/charts/scatter/index",
+    "pages/charts/sunburst/index",
+    "pages/charts/funnel/index",
+    "pages/charts/radar/index",
+    "pages/charts/gauge/index",
+    "pages/charts/pie/index",
+    "pages/charts/k/index",
+    "pages/charts/heatmap/index",
+    "pages/charts/tree/index",
+    "pages/charts/treemap/index",
+    "pages/charts/map/index",
+    "pages/charts/graph/index",
+    "pages/charts/boxplot/index",
+    "pages/charts/parallel/index",
+    "pages/charts/sankey/index",
+    "pages/charts/themeRiver/index",
+    "pages/charts/lazyLoad/index",
+    "pages/charts/multiCharts/index",
+    "pages/charts/move/index",
+    "pages/charts/saveCanvas/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#fbf9fe",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "精选",
+        "iconPath": "static/jingxuan_hui.png",
+        "selectedIconPath": "static/jingxuan_liang.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "榜单",
+        "iconPath": "static/bangdan_hui.png",
+        "selectedIconPath": "static/bangdan_liang.png"
+      },
+      {
+        "pagePath": "pages/bangdan/bangdan",
+        "text": "我的",
+        "iconPath": "static/wode_hui.png",
+        "selectedIconPath": "static/wode_liang.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

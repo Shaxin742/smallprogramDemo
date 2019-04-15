@@ -1,0 +1,5 @@
+<!--pages/fsCom/fsCom.wxml-->
+<view>
+123
+<button bindtap='emitData'>{{propC}}</button>
+</view>
