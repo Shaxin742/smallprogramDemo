@@ -1,0 +1,9 @@
+/* pages/fsCom/fsCom.wxss */
+.sonCom{
+  border: 2rpx solid #666;
+  border-radius: 10rpx;
+  margin: 20rpx;
+}
+.sonCom button{
+  margin-top:30rpx;
+}

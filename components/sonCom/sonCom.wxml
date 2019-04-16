@@ -1,0 +1,6 @@
+<!--pages/fsCom/fsCom.wxml-->
+<view class='sonCom'>
+接收到的父亲的值：<text style='color:red'>{{sonVal}}</text>
+<input bindinput='bindCode' value='{{sonVal}}'></input>
+<button bindtap='emitData'>给父亲传值</button>
+</view>

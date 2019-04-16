@@ -25,7 +25,6 @@
   font-size: 32rpx;
   color: #aaa;
   justify-content: center;
-  margin-top: 50rpx;
 }
 .page-header-text {
   padding: 20rpx 40rpx;

@@ -1,0 +1,9 @@
+<!--pages/fatherSon/fatherSon.wxml-->
+<view>
+{{val}}
+<button type='warn' bindtap='test'>调用子组件方法</button>
+  <son-com
+  id='sonCom'
+  sonVal="{{toSonVal}}"
+  bind:myevent="emitData"/>
+</view>

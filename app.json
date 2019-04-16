@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/fatherSon/fatherSon",
     "pages/echarts/echarts",
     "pages/newpage/newpage",
     "pages/bdmap/bdmap",
@@ -9,7 +10,6 @@
     "pages/bangdan/bangdan",
     "pages/gdmap/gdmap",
     "pages/txmap/txmap",
-
     "pages/charts/bar/index",
     "pages/charts/measureText/index",
     "pages/charts/line/index",

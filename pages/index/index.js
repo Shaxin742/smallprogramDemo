@@ -51,6 +51,11 @@ Page({
       url: '../echarts/echarts'
     })
   },
+  fatherSon() {
+    wx.navigateTo({
+      url: '../fatherSon/fatherSon'
+    })
+  },
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({

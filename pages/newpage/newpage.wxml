@@ -1,7 +1,4 @@
 
 <view>
-{{val}}
-  <fs-com 
-  propC="{{dataC}}"
-  bind:myevent="emitData"/>
+路由穿的值：{{val}}
 </view>
