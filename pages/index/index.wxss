@@ -19,6 +19,20 @@
 .usermotto {
   margin-top: 200px;
 }
+.container{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  background: #f9f9f9;
+}
 .container button{
-  margin:20rpx 0;
+  margin:20rpx;
+  /* width: 300rpx; */
+}
+navigator{
+  font-size:32rpx;
+  padding: 30rpx;
+  background: white;
+  margin: 20rpx;
+  border-radius: 6px;
 }

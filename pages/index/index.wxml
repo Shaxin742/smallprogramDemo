@@ -12,13 +12,28 @@
     </block>
   </view>
   <view style='width:100%'>
-    <button bindtap='buy'>购买</button>
-    <button bindtap='tobdmap'>百度地图</button>
-    <button bindtap='togdmap'>高德地图</button>
-    <button bindtap='txmap'>腾讯地图</button>
+    <navigator url='../projects/projects'>
+      购买 
+    </navigator>
+    <navigator url='../bdmap/bdmap'>
+      百度地图 
+    </navigator>
+    <navigator url='../gdmap/gdmap'>
+      高德地图 
+    </navigator>
+    <navigator url='../txmap/txmap'>
+      腾讯地图 
+    </navigator>
+    <navigator url='../echarts/echarts'>
+      echarts 
+    </navigator>
+    <navigator url='../dropDown/dropDown'>
+      下拉加载 
+    </navigator>
+    <navigator url='../eleme/eleme'>
+      饿了么购买页 
+    </navigator>
     <button bindtap='msg'>跳转页面传值</button>
-    <button open-type="share">分享</button>
-    <button bindtap='echarts'>echarts</button>
-    <button bindtap='fatherSon'>父子传值</button>
+    <button open-type='share'>分享</button>
   </view>
 </view>

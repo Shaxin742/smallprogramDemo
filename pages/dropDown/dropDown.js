@@ -14,27 +14,27 @@ Page({
   scroll(e) {
     console.log(e)
   },
-  onPullDownRefresh(){
+  onPullDownRefresh() {
     wx.showNavigationBarLoading()
     wx.showLoading({
       title: '加载中',
       mask: true
     })
-    setTimeout(()=>{
+    setTimeout(() => {
       wx.hideLoading()
-    },3000)
+    }, 3000)
   },
-  onLoad(){
+  onLoad() {
     wx.setNavigationBarColor({
-      frontColor:'#ffffff',
-      backgroundColor:'#dadada'
+      frontColor: '#ffffff',
+      backgroundColor: '#dadada'
     })
   },
   onReachBottom() {
     wx.showNavigationBarLoading()
     wx.showLoading({
       title: '加载中',
-      mask:true
+      mask: true
     })
     setTimeout(() => {
       wx.hideLoading()

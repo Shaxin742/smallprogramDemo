@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/eleme/eleme",
     "pages/index/index",
     "pages/fatherSon/fatherSon",
     "pages/echarts/echarts",
@@ -7,7 +8,6 @@
     "pages/bdmap/bdmap",
     "pages/projects/projects",
     "pages/logs/logs",
-    "pages/bangdan/bangdan",
     "pages/gdmap/gdmap",
     "pages/txmap/txmap",
     "pages/charts/bar/index",
@@ -32,12 +32,13 @@
     "pages/charts/lazyLoad/index",
     "pages/charts/multiCharts/index",
     "pages/charts/move/index",
-    "pages/charts/saveCanvas/index"
+    "pages/charts/saveCanvas/index",
+    "pages/dropDown/dropDown",
+    "pages/my/my"
   ],
   "window": {
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "enablePullDownRefresh": true,
     "backgroundColor": "#fbf9fe",
     "navigationBarTextStyle": "black"
   },
@@ -60,7 +61,7 @@
         "selectedIconPath": "static/bangdan_liang.png"
       },
       {
-        "pagePath": "pages/bangdan/bangdan",
+        "pagePath": "pages/my/my",
         "text": "我的",
         "iconPath": "static/wode_hui.png",
         "selectedIconPath": "static/wode_liang.png"

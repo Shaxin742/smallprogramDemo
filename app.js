@@ -38,7 +38,7 @@ App({
   globalData: {
     userInfo: null,
     latitude: null,
-    val: '每只',
+    val: '全局状态',
     longitude:null
   },
   onHide(){

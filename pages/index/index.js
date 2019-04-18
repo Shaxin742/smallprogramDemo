@@ -6,10 +6,10 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    rebackVal:'',
+    rebackVal: '',
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
     return {
       title: '我好帅',
       path: '/pages/gdmap'
@@ -21,48 +21,18 @@ Page({
       url: '../logs/logs'
     })
   },
-  buy(){
-    wx.navigateTo({
-      url: '../projects/projects'
-    })
-  },
-  tobdmap(){
-    wx.navigateTo({
-      url: '../bdmap/bdmap'
-    })
-  },
-  togdmap(){
-    wx.navigateTo({
-      url: '../gdmap/gdmap'
-    })
-  },
-  txmap(){
-    wx.navigateTo({
-      url: '../txmap/txmap'
-    })
-  },
-  msg(){
+  msg() {
     wx.navigateTo({
       url: '../newpage/newpage?val=1'
     })
-  }, 
-  echarts() {
-    wx.navigateTo({
-      url: '../echarts/echarts'
-    })
   },
-  fatherSon() {
-    wx.navigateTo({
-      url: '../fatherSon/fatherSon'
-    })
-  },
-  onLoad: function () {
+  onLoad: function() {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -84,7 +54,7 @@ Page({
       })
     }
   },
-  onShow(){
+  onShow() {
     console.log(app.globalData.val)
     var v = app.globalData.val
     this.setData({
