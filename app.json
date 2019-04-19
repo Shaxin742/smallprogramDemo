@@ -34,7 +34,8 @@
     "pages/charts/move/index",
     "pages/charts/saveCanvas/index",
     "pages/dropDown/dropDown",
-    "pages/my/my"
+    "pages/my/my",
+    "data"
   ],
   "window": {
     "navigationBarBackgroundColor": "#fff",
