@@ -1,6 +1,5 @@
 <!--pages/txmap/txmap.wxml-->
 
 <view>
-  <!-- <map id="map" longitude="{{currentLo}}" latitude="{{currentLa}}" scale="{{scale}}" markers="{{markers}}" polyline="{{polyline}}" include-points="{{includePoints}}" show-location style="width: 100%; height: 100%;"></map> -->
-  123
+  <map class='map' show-location ></map>
 </view>

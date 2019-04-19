@@ -1,4 +1,5 @@
 var amapFile = require('../../libs/js/amap-wx.js');
+var app = getApp()
 Page({
   data: {
     key: 'b843e162c8f9889f18ddc0ffe1bb3421',
@@ -10,14 +11,19 @@ Page({
     distance: 0,
     duration: 0,
     markers: null,
-    scale: 16,
+    scale: 12,
     polyline: null,
     statusType: 'car',
     includePoints: []
   },
+  // getAddress: function () {
+  //   var that = this;
+  //   app.getPermission(that);    //传入that值可以在app.js页面直接设置内容    
+  // }, 
   onLoad() {
     var _this = this;
     wx.getLocation({
+      type: 'gcj02', //wgs8
       success(res) {
         _this.setData({
           currentLo: res.longitude,
@@ -31,28 +37,37 @@ Page({
             longitude: res.longitude,
             latitude: res.latitude,
             title: res.address,
-            label:{
-              anchorX:'-8px',
-              anchorY:'-36px',
-              content: '你',
-              fontSize: '12px',
-              borderWidth: '1px',
-              borderColor: 'green',
-              borderRadius: '4px',
-              padding: '3px',
-              textAlign: 'left',
-              display:'BYCLICK'
-            },
-            iconPath: '../../static/marker_red.png',
+            // label:{
+            //   anchorX:'-8px',
+            //   anchorY:'-36px',
+            //   content: '你',
+            //   fontSize: '12px',
+            //   borderWidth: '1px',
+            //   borderColor: 'green',
+            //   borderRadius: '4px',
+            //   padding: '3px',
+            //   textAlign: 'left',
+            //   display:'BYCLICK'
+            // },
+            // iconPath: '../../static/marker_red.png',
             width:16,
             height:16
           }]
         });
+      },
+      fail(){
+        console.log(112312312313)
+        // _this.getLocPermission()
+        _this.getAddress()
       }
     })
   },
   getAddress(e) {
     var _this = this;
+    _this.setData({
+      markers : []
+    })
+    console.log(123123123)
     wx.chooseLocation({
       success(res) {
         var markers = _this.data.markers;
@@ -85,6 +100,9 @@ Page({
           wx.hideLoading()
         }, 2000)
         _this.getPolyline(_this.data.statusType);
+      },
+      fail(){
+        
       }
     });
   },
@@ -119,6 +137,7 @@ Page({
       }
     }
   },
+   // 路线
   getPolyline(_type) {
     var amap = new amapFile.AMapWX({
       key: this.data.key

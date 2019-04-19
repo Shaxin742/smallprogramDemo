@@ -15,15 +15,15 @@
     <navigator url='../projects/projects'>
       购买 
     </navigator>
-    <navigator url='../bdmap/bdmap'>
+    <!-- <navigator url='../bdmap/bdmap'>
       百度地图 
-    </navigator>
+    </navigator> -->
     <navigator url='../gdmap/gdmap'>
       高德地图 
     </navigator>
-    <navigator url='../txmap/txmap'>
+    <!-- <navigator url='../txmap/txmap'>
       腾讯地图 
-    </navigator>
+    </navigator> -->
     <navigator url='../echarts/echarts'>
       echarts 
     </navigator>

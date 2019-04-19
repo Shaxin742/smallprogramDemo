@@ -1,5 +1,3 @@
 {
-  "usingComponents": {
-    "fs-com": "../../components/fsCom/fsCom"
-  }
+  "usingComponents": {}
 }

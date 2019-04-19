@@ -7,7 +7,7 @@
 </view>
 <cover-view class="tui-search-bottom" wx:if="{{isShow}}">
   <cover-view class="page-group">
-    <cover-view class="page-nav-list {{statusType == 'car' ? 'active' : ''}}" data-type="car" bindtap="goTo">驾车{{isShow}}</cover-view>
+    <cover-view class="page-nav-list {{statusType == 'car' ? 'active' : ''}}" data-type="car" bindtap="goTo">驾车</cover-view>
     <cover-view class="page-nav-list {{statusType == 'walk' ? 'active' : ''}}" data-type="walk" bindtap="goTo">步行</cover-view>
     <cover-view class="page-nav-list {{statusType == 'ride' ? 'active' : ''}}" data-type="ride" bindtap="goTo">骑行</cover-view>
   </cover-view>
