@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/eleme/eleme",
     "pages/index/index",
+    "pages/eleme/eleme",
     "pages/fatherSon/fatherSon",
     "pages/echarts/echarts",
     "pages/newpage/newpage",
@@ -34,8 +34,7 @@
     "pages/charts/move/index",
     "pages/charts/saveCanvas/index",
     "pages/dropDown/dropDown",
-    "pages/my/my",
-    "data"
+    "pages/my/my"
   ],
   "window": {
     "navigationBarBackgroundColor": "#fff",
