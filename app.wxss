@@ -42,3 +42,6 @@
 .indent{
   text-indent: 2em;
 }
+.mt30{
+  margin-top: 30rpx
+}

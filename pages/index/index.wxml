@@ -13,7 +13,7 @@
   </view>
   <view style='width:100%'>
     <navigator url='../projects/projects'>
-      购买 
+      轮播 
     </navigator>
     <!-- <navigator url='../bdmap/bdmap'>
       百度地图 
