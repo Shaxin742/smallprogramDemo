@@ -30,3 +30,15 @@
   padding: 20rpx 40rpx;
   border-bottom: 1px solid #ccc; 
 }
+.col333{
+  color: #333
+}
+.col666{
+  color: #666
+}
+.col999{
+  color: #999
+}
+.indent{
+  text-indent: 2em;
+}

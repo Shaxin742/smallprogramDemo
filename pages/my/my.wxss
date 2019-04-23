@@ -1,1 +1,55 @@
 /* pages/my/my.wxss */
+
+.bg {
+  padding-top: 100rpx;
+  height: 500rpx;
+  width: 100%;
+  background: url(http://pqe7sifjw.bkt.clouddn.com/resumebg.jpg) no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.aver {
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 20px auto;
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.aver image {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.share {
+  width: 40rpx;
+  height: 40rpx;
+  background: url(http://pqe7sifjw.bkt.clouddn.com/share.jpg) no-repeat center center;
+  background-size: cover;
+  padding:10rpx;
+}
+/* 内容 */
+.Con{
+  margin-top: 60rpx;
+  padding: 30rpx;
+}
+.Con .title{
+  font-size: 30rpx;
+  text-align: center;
+}
+.tit{
+  margin-bottom: 8rpx;
+}
+.Con .titleBor{
+  height: 6rpx;
+  max-width: 70rpx;
+  background: rgb(51, 122, 183);
+  margin: 0 auto;
+}
+.Con .conten{
+  margin-top: 30rpx;
+  font-size: 26rpx;
+  line-height: 52rpx;
+}

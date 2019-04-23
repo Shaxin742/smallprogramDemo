@@ -1,18 +1,18 @@
 // pages/my/my.js
+var info = require("../../data/info.js")
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    info:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.hideShareMenu()
+    this.setData({
+      info: info.info
+    });
   },
 
   /**

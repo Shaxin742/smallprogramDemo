@@ -1,2 +1,19 @@
-<!--pages/my/my.wxml-->
-<text>毛都没有</text>
+<view class='my'>
+  <view class='bg'>
+    <view class='aver'>
+      <image src='../../static/aver.jpg'></image>
+    </view>
+    <view class='col333'>我叫{{info.name}}</view>
+    <view class='col333'>一名{{info.work}}</view>
+    <!-- <button open-type='share' class='share' size='mini'>
+      <image src='../../static/share.jpg'></image>
+    </button> -->
+  </view>
+  <view class='Con' wx:for="{{info.info}}" wx:key="property">
+    <view class='title col333'>
+      <view class='tit'>{{item.title}}</view>
+      <view class='titleBor'></view>
+    </view>
+    <view class='conten col666 indent'>{{item.content}}</view>
+  </view>
+</view>

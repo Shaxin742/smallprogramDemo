@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/my/my",
     "pages/gdmap/gdmap",
     "pages/txmap/txmap",
     "pages/bdmap/bdmap",
@@ -33,8 +34,7 @@
     "pages/charts/multiCharts/index",
     "pages/charts/move/index",
     "pages/charts/saveCanvas/index",
-    "pages/dropDown/dropDown",
-    "pages/my/my"
+    "pages/dropDown/dropDown"
   ],
   "window": {
     "navigationBarBackgroundColor": "#fff",
@@ -49,22 +49,21 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "text": "精选",
-        "iconPath": "static/jingxuan_hui.png",
-        "selectedIconPath": "static/jingxuan_liang.png"
+        "pagePath": "pages/my/my",
+        "text": "简历",
+        "iconPath": "static/wode_hui.png",
+        "selectedIconPath": "static/wode_liang.png"
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "榜单",
+        "text": "日志",
         "iconPath": "static/bangdan_hui.png",
         "selectedIconPath": "static/bangdan_liang.png"
-      },
-      {
-        "pagePath": "pages/my/my",
-        "text": "我的",
-        "iconPath": "static/wode_hui.png",
-        "selectedIconPath": "static/wode_liang.png"
+      },{
+        "pagePath": "pages/index/index",
+        "text": "demo",
+        "iconPath": "static/jingxuan_hui.png",
+        "selectedIconPath": "static/jingxuan_liang.png"
       }
     ]
   },
