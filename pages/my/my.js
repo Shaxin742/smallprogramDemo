@@ -1,86 +1,154 @@
-// pages/my/my.js
 var info = require("../../data/info.js")
 import * as echarts from '../../components/ec-canvas/echarts';
+const innerAudioContext = wx.createInnerAudioContext();
 
-let chart = null;
-
-function initChart(canvas, width, height) {
-  console.log(echarts)
-  chart = echarts.init(canvas, null, {
-    width: '200px',
-    height: '200px'
-  });
-  canvas.setChart(chart);
-
-  var option = {
-    title: {
-      text: 'ECharts 入门示例'
+function getBarOption(legendData, chartData) {
+  return {
+    visualMap: {
+      show: false,
+      min: 80,
+      max: 600,
+      inRange: {
+        colorLightness: [0, 1]
+      }
     },
-    tooltip: {},
-    xAxis: {
-      data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+    tooltip: {
+      trigger: 'item',
+      formatter: "{b} : {c} ({d}%)"
     },
-    yAxis: {},
+    legend: {
+      // orient: 'vertical',
+      // top: 'middle',
+      bottom: 10,
+      left: 'center',
+      data: legendData
+    },
     series: [{
-      name: '销量',
-      type: 'bar',
-      data: [5, 20, 36, 10, 10, 20]
+      name: '访问来源',
+      type: 'pie',
+      radius: '55%',
+      center: ['50%', '50%'],
+      data: chartData.sort(function(a, b) {
+        return a.value - b.value;
+      }),
+      roseType: 'radius',
+      animationType: 'scale',
+      animationEasing: 'elasticOut',
+      animationDelay: function(idx) {
+        return Math.random() * 200;
+      }
     }]
   };
-
-  chart.setOption(option);
-  return chart;
 }
 Page({
   data: {
-    info:[],
-    data: {
-      ec: {
-        onInit: initChart
-      }
+    ecBar: {
+      lazyLoad: true
     },
-    imgUrls: [
-      {
-        id: 1,
-        url: 'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640'
+    legendData: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎'],
+    chartData: [{
+        value: 335,
+        name: '直接访问'
       },
       {
-        id: 2,
-        url: 'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640'
+        value: 310,
+        name: '邮件营销'
       },
       {
-        id: 3,
-        url: 'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
+        value: 274,
+        name: '联盟广告'
+      },
+      {
+        value: 235,
+        name: '视频广告'
+      },
+      {
+        value: 400,
+        name: '搜索引擎'
       }
     ],
+    // 轮播
     swiperCurrent: 0,
     current: 0,
     autoplay: true,
     interval: 5000,
-    duration: 1000
+    duration: 1000,
+    showIcon:false,
+    playMusic: true
   },
-  onLoad: function (options) {
+  watch: {
+    playMusic: function (newValue) {
+      console.log(newValue); // name改变时，调用该方法输出新值。
+      // setTimeout(()=>{},1000)
+    }
+  },
+  onReady() {
+    this.initChart()
+    innerAudioContext.src = 'http://pqe7sifjw.bkt.clouddn.com/limingqiandeheian.mp3'
+    innerAudioContext.onEnded((res) => {
+      this.play()
+    })
+  },
+  onShow() {
+    this.play()
+  },
+  onLoad: function(options) {
+    getApp().setWatcher(this.data, this.watch);
+    this.ecComponent = this.selectComponent('#mychart-dom-move-bar');
     wx.hideShareMenu()
     this.setData({
       info: info.info
     });
   },
-  onShow: function () {
-    return new Promise((resolve,reject)=>{
-      initChart()
-      resolve()
-    }).then(res=>{
-      console.log(1)
-    })
-  },
-  swiperChange: function (e) {
+  // 轮播
+  swiperChange: function(e) {
     this.setData({
       swiperCurrent: e.detail.current
     })
   },
   //轮播图点击事件
-  swiperTap: function (e) {
+  swiperTap: function(e) {
     console.log(e)
     console.log(e.currentTarget.dataset.id)
   },
-})
+
+  // 初始化echart
+  initChart() {
+    this.ecComponent.init((canvas, width, height) => {
+      const barChart = echarts.init(canvas, null, {
+        width: width,
+        height: height
+      });
+      canvas.setChart(barChart);
+      barChart.setOption(getBarOption(this.data.legendData, this.data.chartData));
+
+      return barChart;
+    })
+  },
+  pageCli() {
+    this.setData({
+      showIcon: false
+    })
+    console.log(this.data.showIcon)
+  },
+  // 音频
+  toggleplay() {
+    this.setData({
+      showIcon: true
+    })
+    this.data.playMusic ? this.pause() : this.play()
+  },
+  play: function(e) {
+    innerAudioContext.play();
+    this.setData({
+      playMusic: true
+    })
+  },
+  //点击 停止
+  pause: function() {
+    innerAudioContext.pause();
+    this.setData({
+      playMusic: false
+    })
+  }
+});

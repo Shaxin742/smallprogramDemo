@@ -1,15 +1,16 @@
-<view class='my'>
+<view class='my' bindtap='pageCli'>
   <view class='bg'>
+    <view class='playIcon' catchtap='toggleplay'>
+      <view class="paly {{showIcon==true?hideIcon:''}}" wx:if="{{!playMusic}}">{{showIcon}}</view>
+      <view class="pause {{showIcon?hideIcon:''}}" wx:if="{{playMusic}}">{{showIcon}}</view>
+    </view>
     <view class='aver'>
       <image src='../../static/aver.jpg'></image>
     </view>
     <view class='col333'>我叫{{info.name}}</view>
     <view class='col333'>一名{{info.work}}</view>
-    <!-- <button open-type='share' class='share' size='mini'>
-      <image src='../../static/share.jpg'></image>
-    </button> -->
   </view>
-  <view class='Con' wx:for="{{info.info}}" wx:key="property">
+  <view class='Con' wx:for="{{info.info}}" wx:key='{{index}}'>
     <view class='title col333'>
       <view class='tit'>{{item.title}}</view>
       <view class='titleBor'></view>
@@ -17,7 +18,7 @@
     <view class='conten col666 indent'>{{item.content}}</view>
   </view>
   <view class='chartCon'>
-    <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+    <ec-canvas id="mychart-dom-move-bar" canvas-id="mychart-move-bar" ec="{{ ecBar }}"></ec-canvas>
   </view>
   <view class='Con'>
     <view class='title col333'>
@@ -25,12 +26,12 @@
       <view class='titleBor'></view>
     </view>
     <view class='works'>
-      <view class='col333 mt30' wx:for="{{info.works}}">
+      <view class='col333 mt30' wx:for="{{info.works}}" wx:key='{{index}}'>
         <view class='cont'>
           <view class='diaCon'>
             <text class='diamond'>◆</text>
           </view>{{item.time}}</view>
-        <view class='cont' wx:for="{{item.content}}">
+        <view class='cont' wx:for="{{item.content}}" wx:key='{{index}}'>
           <view class='co'>{{item}}</view>
         </view>
       </view>
@@ -38,12 +39,12 @@
   </view>
   <view class='lunbo'>
     <swiper display-multiple-items='1' previous-margin='100rpx' next-margin='100rpx' circular bindchange='swiperChange' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-      <block wx:for="{{imgUrls}}" wx:key='{{index}}'>
+      <block wx:for="{{info.imgUrls}}" wx:key='{{index}}'>
         <swiper-item bindtap='swiperTap' item-id='item.id' data-id='{{item.id}}' data-index='{{index}}'>
           <view class="box {{index===swiperCurrent?'curr':''}}">
             <image src='{{item.url}}' mode="widthFix"></image>
             <view class='content'>
-              <text>测试</text>
+              <text>{{item.name}}</text>
             </view>
           </view>
         </swiper-item>

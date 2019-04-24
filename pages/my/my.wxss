@@ -2,12 +2,47 @@
 
 .bg {
   padding-top: 100rpx;
+  position: relative;
   height: 500rpx;
   width: 100%;
   background: url(http://pqe7sifjw.bkt.clouddn.com/resumebg.jpg) no-repeat center center;
   background-size: cover;
   text-align: center;
   font-size: 28rpx;
+}
+
+.playIcon {
+  position: absolute;
+  left: 20rpx;
+  top: 20rpx;
+  height:30rpx;
+  width: 30rpx;
+  padding: 30rpx;
+  text-align: center;
+  background: url(http://pqe7sifjw.bkt.clouddn.com/lufei.jpg) center;
+  background-size:cover; 
+  border-radius: 50%;
+}
+.hideIcon{
+  visibility: hidden;
+}
+.paly {
+  height: 0rpx;
+  margin-left: 10rpx;
+  width: 0rpx;
+  border-left: 20rpx solid #666;
+  border-right: 20rpx solid transparent;
+  border-top: 15rpx solid transparent;
+  border-bottom: 15rpx solid transparent;
+}
+.pause{
+  height: 20rpx;
+  width: 20rpx; 
+  margin-left: 7rpx;
+  padding: 5rpx;
+  border-style: double;
+  border-width: 0rpx 0rpx 0rpx 20rpx;
+  border-color: #666;
 }
 
 .aver {
@@ -69,25 +104,31 @@
   margin-top: 60rpx;
   font-size: 26rpx;
 }
-.works .cont{
+
+.works .cont {
   line-height: 50rpx;
   margin-left: 50rpx;
 }
-.works .cont .diaCon{
+
+.works .cont .diaCon {
   width: 50rpx;
   display: inline-block;
 }
-.works .diamond{
-  height:50rpx;
-  display:inline-block;
+
+.works .diamond {
+  height: 50rpx;
+  display: inline-block;
   font-size: 40rpx;
 }
-.works .cont .co{
+
+.works .cont .co {
   border-left: 4rpx solid #666;
   padding-left: 36rpx;
-  margin-left: 10rpx
+  margin-left: 10rpx;
 }
+
 /* 轮播 */
+
 .lunbo {
   width: 100%;
   margin-top: 120rpx;
@@ -114,6 +155,7 @@ swiper-item image {
   width: 100%;
   /* height: auto; */
 }
+
 .box {
   width: 90%;
   /* height: 600rpx; */
@@ -123,11 +165,13 @@ swiper-item image {
   box-shadow: 0 0 4px 4px #f2f2f2;
   transition: all 1s;
 }
-.curr{
+
+.curr {
   /* height: 700rpx; */
   margin: 10px 0;
 }
-.curr .content{
+
+.curr .content {
   padding: 60rpx 40rpx;
   transition: all 1s;
 }
