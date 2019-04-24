@@ -78,7 +78,7 @@ Page({
   },
   watch: {
     playMusic: function (newValue) {
-      console.log(newValue); // name改变时，调用该方法输出新值。
+      // console.log(newValue); // name改变时，调用该方法输出新值。
       // setTimeout(()=>{},1000)
     }
   },
