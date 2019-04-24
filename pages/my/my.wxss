@@ -10,11 +10,13 @@
   text-align: center;
   font-size: 28rpx;
 }
-
-.playIcon {
-  position: absolute;
+.playIconCon{
+  position: fixed;
   left: 20rpx;
   top: 20rpx;
+  z-index: 100;
+}
+.playIcon {
   height:30rpx;
   width: 30rpx;
   padding: 30rpx;
@@ -22,13 +24,29 @@
   background: url(http://pqe7sifjw.bkt.clouddn.com/lufei.jpg) center;
   background-size:cover; 
   border-radius: 50%;
+  animation: zhuan 60s linear infinite;
+}
+.animatePause{
+  animation-play-state:paused;
+}
+@keyframes zhuan{
+  0%{
+    rotate: 0deg
+  }
+  100%{
+    rotate: 360deg
+  }
 }
 .hideIcon{
   visibility: hidden;
 }
 .paly {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -10rpx;
+  margin-top:-12.5rpx;
   height: 0rpx;
-  margin-left: 10rpx;
   width: 0rpx;
   border-left: 20rpx solid #666;
   border-right: 20rpx solid transparent;
@@ -36,9 +54,13 @@
   border-bottom: 15rpx solid transparent;
 }
 .pause{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -10rpx;
+  margin-top:-10rpx;
   height: 20rpx;
   width: 20rpx; 
-  margin-left: 7rpx;
   padding: 5rpx;
   border-style: double;
   border-width: 0rpx 0rpx 0rpx 20rpx;
