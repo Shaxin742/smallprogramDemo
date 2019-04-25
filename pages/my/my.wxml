@@ -16,7 +16,7 @@
       <view class='tit'>{{item.title}}</view>
       <view class='titleBor'></view>
     </view>
-    <view class='conten col666 indent'>{{item.content}}</view>
+    <view class='conten col666 indent' wx:for="{{item.content}}" wx:key='{{index}}'>{{item}}</view>
   </view>
   <view class='chartCon'>
     <ec-canvas id="mychart-dom-move-bar" canvas-id="mychart-move-bar" ec="{{ ecBar }}"></ec-canvas>

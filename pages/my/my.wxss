@@ -98,6 +98,7 @@
 .Con .title {
   font-size: 30rpx;
   text-align: center;
+  margin-bottom: 30rpx;
 }
 
 .tit {
@@ -112,8 +113,8 @@
 }
 
 .Con .conten {
-  margin-top: 30rpx;
   font-size: 26rpx;
+  margin-bottom: 10rpx;
   line-height: 52rpx;
 }
 
@@ -144,7 +145,7 @@
 }
 
 .works .cont .co {
-  border-left: 4rpx solid #666;
+  border-left: 4rpx solid #3cad46;
   padding-left: 36rpx;
   margin-left: 10rpx;
 }

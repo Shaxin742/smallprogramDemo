@@ -28,13 +28,13 @@ function getBarOption(legendData, chartData) {
       type: 'pie',
       radius: '55%',
       center: ['50%', '50%'],
-      data: chartData.sort(function(a, b) {
+      data: chartData.sort(function (a, b) {
         return a.value - b.value;
       }),
       roseType: 'radius',
       animationType: 'scale',
       animationEasing: 'elasticOut',
-      animationDelay: function(idx) {
+      animationDelay: function (idx) {
         return Math.random() * 200;
       }
     }]
@@ -45,26 +45,31 @@ Page({
     ecBar: {
       lazyLoad: true
     },
-    legendData: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎'],
-    chartData: [{
+    legendData: ['html', 'css', 'js', 'vue', 'ps', '其他'],
+    chartData: [
+      {
         value: 335,
-        name: '直接访问'
+        name: 'html'
       },
       {
         value: 310,
-        name: '邮件营销'
+        name: 'css'
       },
       {
         value: 274,
-        name: '联盟广告'
+        name: 'js'
       },
       {
         value: 235,
-        name: '视频广告'
+        name: 'vue'
       },
       {
-        value: 400,
-        name: '搜索引擎'
+        value: 125,
+        name: 'ps'
+      },
+      {
+        value: 150,
+        name: '其他'
       }
     ],
     // 轮播
@@ -79,7 +84,7 @@ Page({
     animaNum: 0
   },
   watch: {
-    playMusic: function(newValue) {
+    playMusic: function (newValue) {
       // console.log(newValue); // name改变时，调用该方法输出新值。
       // setTimeout(()=>{},1000)
     }
@@ -90,7 +95,7 @@ Page({
       timingFunction: 'linear',
       delay: 0,
       transformOrigin: '50% 50% 0',
-      success: function(res) {
+      success: function (res) {
         console.log("res")
       }
     })
@@ -102,7 +107,7 @@ Page({
       this.play()
     })
   },
-  rotateAni: function(n) {
+  rotateAni: function (n) {
     this.interval = setInterval(() => {
       this.data.animaNum += 1
       this.animation.rotate(10 * (this.data.animaNum)).step()
@@ -111,15 +116,15 @@ Page({
       })
     }, 1000)
   },
-  stopRefresh: function() {
+  stopRefresh: function () {
     console.log(this.interval)
     if (this.interval > 0) {
       clearInterval(this.interval)
       this.interval = 0
     }
   },
-  onShow() {},
-  onLoad: function(options) {
+  onShow() { },
+  onLoad: function (options) {
     getApp().setWatcher(this.data, this.watch);
     this.ecComponent = this.selectComponent('#mychart-dom-move-bar');
     wx.hideShareMenu()
@@ -128,13 +133,13 @@ Page({
     });
   },
   // 轮播
-  swiperChange: function(e) {
+  swiperChange: function (e) {
     this.setData({
       swiperCurrent: e.detail.current
     })
   },
   //轮播图点击事件
-  swiperTap: function(e) {
+  swiperTap: function (e) {
     console.log(e)
     console.log(e.currentTarget.dataset.id)
     wx.showToast({
@@ -167,17 +172,17 @@ Page({
     this.setData({
       showIcon: true
     })
-    this.data.playMusic ? this.stopRefresh() : this.rotateAni() ;
+    this.data.playMusic ? this.stopRefresh() : this.rotateAni();
     this.data.playMusic ? this.pause() : this.play();
   },
-  play: function(e) {
+  play: function (e) {
     innerAudioContext.play();
     this.setData({
       playMusic: true
     })
   },
   //点击 停止
-  pause: function() {
+  pause: function () {
     innerAudioContext.pause();
     this.setData({
       playMusic: false
