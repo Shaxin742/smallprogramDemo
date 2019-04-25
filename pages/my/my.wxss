@@ -24,7 +24,7 @@
   background: url(http://pqe7sifjw.bkt.clouddn.com/lufei.jpg) center;
   background-size:cover; 
   border-radius: 50%;
-  animation: zhuan 60s linear infinite;
+  /* animation: zhuan 60s linear infinite; */
 }
 .animatePause{
   animation-play-state:paused;

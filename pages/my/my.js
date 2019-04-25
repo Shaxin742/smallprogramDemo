@@ -73,25 +73,52 @@ Page({
     autoplay: true,
     interval: 5000,
     duration: 1000,
-    showIcon:false,
-    playMusic: true
+    showIcon: false,
+    playMusic: true,
+    animation: {},
+    animaNum: 0
   },
   watch: {
-    playMusic: function (newValue) {
+    playMusic: function(newValue) {
       // console.log(newValue); // name改变时，调用该方法输出新值。
       // setTimeout(()=>{},1000)
     }
   },
   onReady() {
-    this.initChart()
+    this.animation = wx.createAnimation({
+      duration: 1000,
+      timingFunction: 'linear',
+      delay: 0,
+      transformOrigin: '50% 50% 0',
+      success: function(res) {
+        console.log("res")
+      }
+    })
     innerAudioContext.src = 'http://pqe7sifjw.bkt.clouddn.com/limingqiandeheian.mp3'
+    this.play()
+    this.rotateAni()
+    this.initChart()
     innerAudioContext.onEnded((res) => {
       this.play()
     })
   },
-  onShow() {
-    this.play()
+  rotateAni: function(n) {
+    this.interval = setInterval(() => {
+      this.data.animaNum += 1
+      this.animation.rotate(10 * (this.data.animaNum)).step()
+      this.setData({
+        animation: this.animation.export()
+      })
+    }, 1000)
   },
+  stopRefresh: function() {
+    console.log(this.interval)
+    if (this.interval > 0) {
+      clearInterval(this.interval)
+      this.interval = 0
+    }
+  },
+  onShow() {},
   onLoad: function(options) {
     getApp().setWatcher(this.data, this.watch);
     this.ecComponent = this.selectComponent('#mychart-dom-move-bar');
@@ -110,6 +137,11 @@ Page({
   swiperTap: function(e) {
     console.log(e)
     console.log(e.currentTarget.dataset.id)
+    wx.showToast({
+      title: 'id' + e.currentTarget.dataset.id,
+      icon: 'success',
+      duration: 2000
+    })
   },
 
   // 初始化echart
@@ -129,14 +161,14 @@ Page({
     this.setData({
       showIcon: false
     })
-    console.log(this.data.showIcon)
   },
   // 音频
   toggleplay() {
     this.setData({
       showIcon: true
     })
-    this.data.playMusic ? this.pause() : this.play()
+    this.data.playMusic ? this.stopRefresh() : this.rotateAni() ;
+    this.data.playMusic ? this.pause() : this.play();
   },
   play: function(e) {
     innerAudioContext.play();

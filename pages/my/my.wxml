@@ -1,7 +1,7 @@
 <view class='my' bindtap='pageCli'>
   <view class='bg'>
     <view class='playIconCon' catchtap='toggleplay'>
-      <view class='playIcon {{playMusic?"":"animatePause"}}' ></view>
+      <view class='playIcon' animation="{{animation}}"></view>
       <view class="paly {{showIcon?'':'hideIcon'}}" wx:if="{{!playMusic}}"></view>
       <view class="pause {{showIcon?'':'hideIcon'}}" wx:if="{{playMusic}}"></view>
     </view>
