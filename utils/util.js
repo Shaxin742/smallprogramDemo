@@ -14,6 +14,21 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+
+const createAnimate = (time,timing,delay,origin) => {
+  const animate = wx.createAnimation({
+    duration: time,
+    timingFunction: timing,
+    delay: delay,
+    transformOrigin: origin,
+    success: function (res) {
+      console.log("res")
+    }
+  })
+  return animate
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  createAnimate: createAnimate
 }

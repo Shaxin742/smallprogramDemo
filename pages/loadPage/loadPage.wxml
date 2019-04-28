@@ -1,0 +1,4 @@
+<!--pages/loadPage/loadPage.wxml-->
+<view class='bg'>
+      <view class='btn' bindtap='tomy'>进入首页</view>
+</view>

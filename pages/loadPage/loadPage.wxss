@@ -1,0 +1,23 @@
+/* pages/loadPage/loadPage.wxss */
+
+.bg {
+  height: 100vh;
+  width: 100%;
+  background: url(http://pqe7sifjw.bkt.clouddn.com/loadBg2.jpg) no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+
+.btn {
+  width: 300rpx;
+  position: absolute;
+  bottom: 180rpx;
+  right: 100rpx;
+  background:rgba(13, 202, 266, .3);
+  color: white;
+  border-radius: 20rpx;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 100rpx;
+  height: 100rpx;
+}

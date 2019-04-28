@@ -1,7 +1,7 @@
 var info = require("../../data/info.js")
 import * as echarts from '../../components/ec-canvas/echarts';
 const innerAudioContext = wx.createInnerAudioContext();
-
+const util = require('../../utils/util.js')
 function getBarOption(legendData, chartData) {
   return {
     visualMap: {
@@ -21,7 +21,11 @@ function getBarOption(legendData, chartData) {
       // top: 'middle',
       bottom: 10,
       left: 'center',
-      data: legendData
+      data: legendData,
+      zIndex:1,
+      "textStyle": {
+        "fontSize": 14
+      }
     },
     series: [{
       name: '访问来源',
@@ -31,6 +35,10 @@ function getBarOption(legendData, chartData) {
       data: chartData.sort(function (a, b) {
         return a.value - b.value;
       }),
+      zIndex: 1,
+      "textStyle": {
+        "fontSize": 18
+      },
       roseType: 'radius',
       animationType: 'scale',
       animationEasing: 'elasticOut',
@@ -81,7 +89,10 @@ Page({
     showIcon: false,
     playMusic: true,
     animation: {},
-    animaNum: 0
+    animaNum: 0,
+    averAni: {},
+    nameAni: {},
+    infoAni: {},
   },
   watch: {
     playMusic: function (newValue) {
@@ -90,19 +101,16 @@ Page({
     }
   },
   onReady() {
-    this.animation = wx.createAnimation({
-      duration: 1000,
-      timingFunction: 'linear',
-      delay: 0,
-      transformOrigin: '50% 50% 0',
-      success: function (res) {
-        console.log("res")
-      }
-    })
+    this.animation = util.createAnimate(1000,'linear',0,'50%,50%')
+    this.averAni = util.createAnimate(200,'linear',0,'50%,50%')
+    this.nameAni = util.createAnimate(200,'linear',300,'50%,50%')
+    this.infoAni = util.createAnimate(200,'linear',500,'50%,50%')
     innerAudioContext.src = 'http://pqe7sifjw.bkt.clouddn.com/limingqiandeheian.mp3'
-    this.play()
-    this.rotateAni()
-    this.initChart()
+    console.log(innerAudioContext.src)
+    // innerAudioContext.src = 'https://music.163.com/song?id=1349292048&userid=571759763'
+    // this.play() // 播放歌曲
+    this.rotateAni() // 歌曲背景转动
+    this.initChart() // echarts展示
     innerAudioContext.onEnded((res) => {
       this.play()
     })
@@ -115,6 +123,18 @@ Page({
         animation: this.animation.export()
       })
     }, 1000)
+    this.averAni.scale3d(1, 1, 1).step().scale3d(1.25, 0.75, 1).step().scale3d(0.75, 1.25, 1).step().scale3d(1.15, 0.85, 1).step().scale3d(.95, 1.05, 1).step().scale3d(1.05, .95, 1).step().scale3d(1, 1, 1).step();
+    this.setData({
+      averAni: this.averAni.export()
+    })
+    this.nameAni.opacity(0).translate3d(0, '100%', 0).step().opacity(1).translate3d(0, 0, 0).step()
+    this.setData({
+      nameAni: this.nameAni.export()
+    })
+    this.infoAni.opacity(0).translate3d(0, '100%', 0).step().opacity(1).translate3d(0, 0, 0).step()
+    this.setData({
+      infoAni: this.infoAni.export()
+    })
   },
   stopRefresh: function () {
     console.log(this.interval)

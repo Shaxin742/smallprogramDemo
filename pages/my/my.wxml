@@ -5,11 +5,11 @@
       <view class="paly {{showIcon?'':'hideIcon'}}" wx:if="{{!playMusic}}"></view>
       <view class="pause {{showIcon?'':'hideIcon'}}" wx:if="{{playMusic}}"></view>
     </view>
-    <view class='aver'>
+    <view class='aver' animation="{{averAni}}">
       <image src='../../static/aver.jpg'></image>
     </view>
-    <view class='col333'>我叫{{info.name}}</view>
-    <view class='col333'>一名{{info.work}}</view>
+    <view class='col333 opa0' animation="{{nameAni}}">我叫{{info.name}}</view>
+    <view class='col333 opa0' animation="{{infoAni}}">一名{{info.work}}</view>
   </view>
   <view class='Con' wx:for="{{info.info}}" wx:key='{{index}}'>
     <view class='title col333'>
