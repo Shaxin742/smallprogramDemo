@@ -9,7 +9,8 @@
 }
 
 .btn {
-  width: 300rpx;
+  width: 250rpx;
+  /* opacity: 0; */
   position: absolute;
   bottom: 180rpx;
   right: 100rpx;
