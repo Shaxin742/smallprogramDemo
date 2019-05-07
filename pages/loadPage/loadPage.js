@@ -4,6 +4,12 @@ Page({
   data: {
     anima:{}
   },
+  onLoad(){
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff',
+      backgroundColor: '#016d88'
+    })
+  },
   onReady(){
     this.anima = util.createAnimate(1000, 'linear', 0, '50%,50%')
     this.addAnimate()

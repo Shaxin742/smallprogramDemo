@@ -23,15 +23,31 @@
   </view>
   <view class='Con'>
     <view class='title col333'>
+      <view class='tit'>{{info.works.title}}</view>
+      <view class='titleBor'></view>
+    </view>
+    <view class='conten col666 indent mt40' wx:for="{{info.works.works}}" wx:key='{{index}}'>
+      <view><text class='bold'>项目名称:</text> {{item.name}}</view>
+      <view><text class='bold'>项目描述:</text> {{item.desp}}</view>
+      <view>
+        <view class='bold'>主要技术：</view>
+        <view wx:for="{{item.technology}}">
+          <view>{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='Con'>
+    <view class='title col333'>
       <view class='tit'>我的经历</view>
       <view class='titleBor'></view>
     </view>
-    <view class='works'>
-      <view class='col333 mt30' wx:for="{{info.works}}" wx:key='{{index}}'>
+    <view class='experience'>
+      <view class='col333 mt30' wx:for="{{info.experience}}" wx:key='{{index}}'>
         <view class='cont'>
           <view class='diaCon'>
             <text class='diamond'>◆</text>
-          </view>{{item.time}}</view>
+          </view><text class='time'>{{item.time}}</text></view>
         <view class='cont' wx:for="{{item.content}}" wx:key='{{index}}'>
           <view class='co'>{{item}}</view>
         </view>

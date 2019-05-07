@@ -9,44 +9,51 @@
   background-size: cover;
   text-align: center;
   font-size: 28rpx;
-  line-height:45rpx;
+  line-height: 45rpx;
 }
-.playIconCon{
+
+.playIconCon {
   position: fixed;
   left: 20rpx;
   top: 20rpx;
-  z-index: 999;
+  z-index: 999999;
 }
+
 .playIcon {
-  height:30rpx;
+  height: 30rpx;
   width: 30rpx;
   padding: 30rpx;
   text-align: center;
   background: url(http://pqe7sifjw.bkt.clouddn.com/lufei.jpg) center;
-  background-size:cover; 
+  background-size: cover;
   border-radius: 50%;
   /* animation: zhuan 60s linear infinite; */
 }
-.animatePause{
-  animation-play-state:paused;
+
+.animatePause {
+  animation-play-state: paused;
 }
-@keyframes zhuan{
-  0%{
-    rotate: 0deg
+
+@keyframes zhuan {
+  0% {
+    rotate: 0deg;
   }
-  100%{
-    rotate: 360deg
+
+  100% {
+    rotate: 360deg;
   }
 }
-.hideIcon{
+
+.hideIcon {
   visibility: hidden;
 }
+
 .paly {
   position: absolute;
   top: 50%;
   left: 50%;
   margin-left: -10rpx;
-  margin-top:-12.5rpx;
+  margin-top: -12.5rpx;
   height: 0rpx;
   width: 0rpx;
   border-left: 20rpx solid #666;
@@ -54,14 +61,15 @@
   border-top: 15rpx solid transparent;
   border-bottom: 15rpx solid transparent;
 }
-.pause{
+
+.pause {
   position: absolute;
   top: 50%;
   left: 50%;
   margin-left: -10rpx;
-  margin-top:-10rpx;
+  margin-top: -10rpx;
   height: 20rpx;
-  width: 20rpx; 
+  width: 20rpx;
   padding: 5rpx;
   border-style: double;
   border-width: 0rpx 0rpx 0rpx 20rpx;
@@ -125,36 +133,48 @@
   position: relative;
   z-index: 1;
 }
-#mychart-dom-move-bar{
+
+#mychart-dom-move-bar {
   position: relative;
   z-index: 1;
 }
-.works {
+
+.experience {
   margin-top: 60rpx;
   font-size: 26rpx;
 }
 
-.works .cont {
+.experience .cont {
   line-height: 50rpx;
   margin-left: 50rpx;
 }
 
-.works .cont .diaCon {
+.experience .cont:nth-child(3) .co{
+  color: #e87e04;
+}
+
+.experience .cont .diaCon {
   width: 50rpx;
   display: inline-block;
 }
 
-.works .diamond {
+.experience .diamond {
   height: 50rpx;
   display: inline-block;
   font-size: 40rpx;
 }
 
-.works .cont .co {
+.experience .time {
+  background: #ed5565;
+  color: white;
+}
+
+.experience .cont .co {
   border-left: 4rpx solid #3cad46;
   padding-left: 36rpx;
   margin-left: 20rpx;
 }
+
 
 /* 轮播 */
 

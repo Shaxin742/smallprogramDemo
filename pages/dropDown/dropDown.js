@@ -22,7 +22,8 @@ Page({
     })
     setTimeout(() => {
       wx.hideLoading()
-    }, 3000)
+      wx.hideNavigationBarLoading()
+    }, 2000)
   },
   onLoad() {
     wx.setNavigationBarColor({
@@ -38,7 +39,8 @@ Page({
     })
     setTimeout(() => {
       wx.hideLoading()
-    }, 3000)
+      wx.hideNavigationBarLoading()
+    }, 2000)
   },
   tap(e) {
     for (let i = 0; i < order.length; ++i) {

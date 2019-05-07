@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/loadPage/loadPage",
     "pages/my/my",
+    "pages/loadPage/loadPage",
     "pages/gdmap/gdmap",
     "pages/txmap/txmap",
     "pages/bdmap/bdmap",

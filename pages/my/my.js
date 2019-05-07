@@ -53,7 +53,7 @@ Page({
     ecBar: {
       lazyLoad: true
     },
-    legendData: ['html', 'css', 'js', 'vue', 'ps', '其他'],
+    legendData: ['html', 'css', 'js', 'vue', '其他', 'ps'],
     chartData: [
       {
         value: 335,
@@ -72,12 +72,12 @@ Page({
         name: 'vue'
       },
       {
-        value: 125,
-        name: 'ps'
-      },
-      {
         value: 150,
         name: '其他'
+      },
+      {
+        value: 125,
+        name: 'ps'
       }
     ],
     // 轮播
