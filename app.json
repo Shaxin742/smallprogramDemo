@@ -56,12 +56,6 @@
         "selectedIconPath": "static/wode_liang.png"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "text": "日志",
-        "iconPath": "static/bangdan_hui.png",
-        "selectedIconPath": "static/bangdan_liang.png"
-      },
-      {
         "pagePath": "pages/index/index",
         "text": "demo",
         "iconPath": "static/jingxuan_hui.png",

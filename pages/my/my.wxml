@@ -31,7 +31,7 @@
       <view><text class='bold'>项目描述:</text> {{item.desp}}</view>
       <view>
         <view class='bold'>主要技术：</view>
-        <view wx:for="{{item.technology}}">
+        <view wx:for="{{item.technology}}" wx:key='{{index}}'>
           <view>{{item}}</view>
         </view>
       </view>

@@ -108,7 +108,7 @@ Page({
     innerAudioContext.src = 'http://pqe7sifjw.bkt.clouddn.com/limingqiandeheian.mp3'
     console.log(innerAudioContext.src)
     // innerAudioContext.src = 'https://music.163.com/song?id=1349292048&userid=571759763'
-    // this.play() // 播放歌曲
+    this.play() // 播放歌曲
     this.addAnimate() // 歌曲背景转动
     this.initChart() // echarts展示
     innerAudioContext.onEnded((res) => {
@@ -135,13 +135,6 @@ Page({
     this.setData({
       infoAni: this.infoAni.export()
     })
-  },
-  stopRefresh: function () {
-    console.log(this.interval)
-    if (this.interval > 0) {
-      clearInterval(this.interval)
-      this.interval = 0
-    }
   },
   onShow() { },
   onLoad: function (options) {
@@ -194,6 +187,22 @@ Page({
     })
     this.data.playMusic ? this.stopRefresh() : this.rotateAni();
     this.data.playMusic ? this.pause() : this.play();
+  },
+  rotateAni(){
+    this.interval = setInterval(() => {
+      this.data.animaNum += 1
+      this.animation.rotate(10 * (this.data.animaNum)).step()
+      this.setData({
+        animation: this.animation.export()
+      })
+    }, 1000)
+  },
+  stopRefresh: function () {
+    console.log(this.interval)
+    if (this.interval > 0) {
+      clearInterval(this.interval)
+      this.interval = 0
+    }
   },
   play: function (e) {
     innerAudioContext.play();
