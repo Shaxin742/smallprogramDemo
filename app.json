@@ -35,7 +35,8 @@
     "pages/charts/multiCharts/index",
     "pages/charts/move/index",
     "pages/charts/saveCanvas/index",
-    "pages/dropDown/dropDown"
+    "pages/dropDown/dropDown",
+    "pages/timeTable/timeTable"
   ],
   "window": {
     "navigationBarBackgroundColor": "#fff",

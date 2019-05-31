@@ -105,7 +105,7 @@ Page({
     this.averAni = util.createAnimate(200,'linear',0,'50%,50%')
     this.nameAni = util.createAnimate(200,'linear',300,'50%,50%')
     this.infoAni = util.createAnimate(200,'linear',500,'50%,50%')
-    innerAudioContext.src = 'http://pqe7sifjw.bkt.clouddn.com/limingqiandeheian.mp3'
+    innerAudioContext.src = 'http://qiniudns.shaxin741.vip/limingqiandeheian.mp3'
     console.log(innerAudioContext.src)
     // innerAudioContext.src = 'https://music.163.com/song?id=1349292048&userid=571759763'
     this.play() // 播放歌曲

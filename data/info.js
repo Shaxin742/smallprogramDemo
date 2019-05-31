@@ -83,22 +83,22 @@ let info = {
   imgUrls: [{
       id: 1,
       name: '深中通道',
-      url: 'http://pqe7sifjw.bkt.clouddn.com/zhongshan.png'
+      url: 'http://qiniudns.shaxin741.vip/zhongshan.png'
     },
     {
       id: 2,
       name: '艾艾贴',
-      url: 'http://pqe7sifjw.bkt.clouddn.com/aiaijiu.png'
+      url: 'http://qiniudns.shaxin741.vip/aiaijiu.png'
     },
     {
       id: 3,
       name: '相泽青英',
-      url: 'http://pqe7sifjw.bkt.clouddn.com/xiangze.png'
+      url: 'http://qiniudns.shaxin741.vip/xiangze.png'
     },
     {
       id: 4,
       name: '音乐平台',
-      url: 'http://pqe7sifjw.bkt.clouddn.com/geku.png'
+      url: 'http://qiniudns.shaxin741.vip/geku.png'
     }
   ]
 }

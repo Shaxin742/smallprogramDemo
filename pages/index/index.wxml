@@ -30,9 +30,9 @@
     <navigator url='../dropDown/dropDown'>
       下拉加载 
     </navigator>
-    <navigator url='../eleme/eleme'>
+    <!-- <navigator url='../eleme/eleme'>
       饿了么购买页 
-    </navigator>
+    </navigator> -->
     <button bindtap='msg'>跳转页面传值</button>
     <button open-type='share'>分享</button>
   </view>
