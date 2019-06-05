@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/my/my",
+    "pages/timeTable/timeTable",
     "pages/loadPage/loadPage",
     "pages/gdmap/gdmap",
     "pages/txmap/txmap",
@@ -35,8 +36,7 @@
     "pages/charts/multiCharts/index",
     "pages/charts/move/index",
     "pages/charts/saveCanvas/index",
-    "pages/dropDown/dropDown",
-    "pages/timeTable/timeTable"
+    "pages/dropDown/dropDown"
   ],
   "window": {
     "navigationBarBackgroundColor": "#fff",

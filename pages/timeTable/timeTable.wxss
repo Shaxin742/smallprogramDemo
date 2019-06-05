@@ -1,1 +1,79 @@
 /* pages/timeTable/timeTable.wxss */
+
+.box {
+  position: absolute;
+  transition: 1s;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #ccc;
+}
+
+.yearBox {
+  top: 50%;
+  left: 50%;
+  height: 40px;
+  width: 40px;
+  margin-top: -20px;
+  margin-left: -20px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.timeBox {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -150px;
+}
+
+.dayBox {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 50%;
+  margin-left: -75px;
+  margin-top: -75px;
+}
+
+.hourBox {
+  width: 300px;
+  height: 300px;
+  /* top: 200px;
+  left: 200px; */
+}
+
+.minutesBox {
+  width: 450px;
+  height: 450px;
+  /* top: 100px;
+  left: 100px; */
+}
+
+.secondBox {
+  width: 600px;
+  height: 600px;
+  /* top: 0;
+  left: 0; */
+  /* position: absolute; */
+}
+
+.timeContainer {
+  overflow: auto;
+  height: 100%;
+  transition: 1s;
+}
+
+.timeContainer view {
+  width: 50px;
+  height: 20px;
+  font-size: 12px;
+  position: absolute;
+}
