@@ -24,7 +24,7 @@
   width: 30rpx;
   padding: 30rpx;
   text-align: center;
-  background: url(http://pqe7sifjw.bkt.clouddn.com/lufei.jpg) center;
+  background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595846727414&di=910ef2215d5f234b7660d3db6e5e1fe1&imgtype=0&src=http%3A%2F%2Ftupian.qqw21.com%2Farticle%2FUploadPic%2F2020-6%2F2020617225141628.jpg) center;
   background-size: cover;
   border-radius: 50%;
   /* animation: zhuan 60s linear infinite; */

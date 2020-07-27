@@ -1,0 +1,5 @@
+<!--pages/login/login.wxml-->
+<view>
+<button catchtap="login">登录</button>
+<button catchtap="test">登录</button>
+</view>

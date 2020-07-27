@@ -1,25 +1,47 @@
 //app.js
 App({
   onLaunch: function() {
+    // wx.getUserInfo({
+    //   success: function (res) {
+    //     console.log(res)
+    //     //session 未过期，并且在本生命周期一直有效
+    //   },
+    //   fail: function (res) {
+    //     console.log(res)
+    //   }
+    // })
+    // wx.checkSession({
+    //   success: function(res) {
+    //     console.log(res)
+    //     //session 未过期，并且在本生命周期一直有效
+    //   },
+    //   fail: function () {
+    //     console.log(222)
+    //     //登录态过期
+    //     wx.login({
+    //       success: res => {
+    //         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+    //         console.log(res)
+    //       }
+    //     })
+    //   }
+    // })
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
+    console.log(logs)
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
 
     // 获取用户信息
     wx.getSetting({
       success: res => {
+        console.log(res)
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
+              console.log(res)
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
 
@@ -28,6 +50,20 @@ App({
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(res)
               }
+            }
+          })
+        } else {
+          wx.showToast({
+            title: '请授权登录！',
+            icon: 'none',
+            duration: 1500,
+            success: function () {
+              //定时器，未授权1.5秒后跳转授权页面
+              // setTimeout(function () {
+              //   wx.reLaunch({
+              //     url: '../login/login',
+              //   })
+              // }, 1500);
             }
           })
         }
@@ -69,7 +105,7 @@ App({
     })
   },
 
-  // 地图
+  // 地图授权
   getLocPermission() {
     wx.getSetting({
       success: function(res) {
@@ -84,7 +120,6 @@ App({
                 console.log(res)
                 wx.openSetting({
                   success: function(data) {
-                    console.log('getSSSSSSccc')
                     if (data.authSetting["scope.userLocation"] === true) {
                       wx.showToast({
                         title: '授权成功',
@@ -123,7 +158,6 @@ App({
     })
   },
   getPermission: function(obj) {
-    console.log(1)
     wx.getLocation({
       fail: function() {
         wx.getSetting({

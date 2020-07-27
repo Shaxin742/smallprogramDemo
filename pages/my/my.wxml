@@ -1,22 +1,25 @@
 <view class='my' bindtap='pageCli'>
   <view class='bg'>
+  <!-- 左上角音频播放 -->
     <view class='playIconCon' catchtap='toggleplay'>
       <view class='playIcon' animation="{{animation}}"></view>
       <view class="paly {{showIcon?'':'hideIcon'}}" wx:if="{{!playMusic}}"></view>
       <view class="pause {{showIcon?'':'hideIcon'}}" wx:if="{{playMusic}}"></view>
     </view>
+    <!-- 信息 -->
     <view class='aver' animation="{{averAni}}">
       <image src='../../static/aver.jpg'></image>
     </view>
     <view class='col333 opa0' animation="{{nameAni}}">我叫{{info.name}}</view>
     <view class='col333 opa0' animation="{{infoAni}}">一名{{info.work}}</view>
   </view>
-  <view class='Con' wx:for="{{info.info}}" wx:key='{{index}}'>
+  <!-- 个人信息 -->
+  <view class='Con' wx:for="{{info.info}}" wx:key='index'>
     <view class='title col333'>
       <view class='tit'>{{item.title}}</view>
       <view class='titleBor'></view>
     </view>
-    <view class='conten col666 indent' wx:for="{{item.content}}" wx:key='{{index}}'>{{item}}</view>
+    <view class='conten col666 indent' wx:for="{{item.content}}"  wx:key='index'>{{item}}</view>
   </view>
   <view class='chartCon'>
     <ec-canvas id="mychart-dom-move-bar" canvas-id="mychart-move-bar" ec="{{ ecBar }}"></ec-canvas>
@@ -26,37 +29,39 @@
       <view class='tit'>{{info.works.title}}</view>
       <view class='titleBor'></view>
     </view>
-    <view class='conten col666 indent mt40' wx:for="{{info.works.works}}" wx:key='{{index}}'>
+    <view class='conten col666 indent mt40' wx:for="{{info.works.works}}" wx:key='index'>
       <view><text class='bold'>项目名称:</text> {{item.name}}</view>
       <view><text class='bold'>项目描述:</text> {{item.desp}}</view>
       <view>
         <view class='bold'>主要技术：</view>
-        <view wx:for="{{item.technology}}" wx:key='{{index}}'>
+        <view wx:for="{{item.technology}}"  wx:key='index'>
           <view>{{item}}</view>
         </view>
       </view>
     </view>
   </view>
+  <!-- 我的经历 -->
   <view class='Con'>
     <view class='title col333'>
       <view class='tit'>我的经历</view>
       <view class='titleBor'></view>
     </view>
     <view class='experience'>
-      <view class='col333 mt30' wx:for="{{info.experience}}" wx:key='{{index}}'>
+      <view class='col333 mt30' wx:for="{{info.experience}}"  wx:key='index'>
         <view class='cont'>
           <view class='diaCon'>
             <text class='diamond'>◆</text>
           </view><text class='time'>{{item.time}}</text></view>
-        <view class='cont' wx:for="{{item.content}}" wx:key='{{index}}'>
+        <view class='cont' wx:for="{{item.content}}"  wx:key='index'>
           <view class='co'>{{item}}</view>
         </view>
       </view>
     </view>
   </view>
+  <!-- 项目 -->
   <view class='lunbo'>
     <swiper display-multiple-items='1' previous-margin='100rpx' next-margin='100rpx' circular bindchange='swiperChange' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-      <block wx:for="{{info.imgUrls}}" wx:key='{{index}}'>
+      <block wx:for="{{info.imgUrls}}"  wx:key='index'>
         <swiper-item bindtap='swiperTap' item-id='item.id' data-id='{{item.id}}' data-index='{{index}}'>
           <view class="box {{index===swiperCurrent?'curr':''}}">
             <image src='{{item.url}}' mode="widthFix"></image>
