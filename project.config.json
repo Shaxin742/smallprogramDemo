@@ -24,7 +24,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.6.4",
+	"libVersion": "2.12.0",
 	"appid": "wx5959e3f7f0f2a841",
 	"projectname": "wechattest",
 	"debugOptions": {

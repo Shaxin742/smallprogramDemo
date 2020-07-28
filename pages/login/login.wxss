@@ -11,3 +11,6 @@ button{
   margin: 0 auto;
   background: greenyellow;
 }
+.getUserInfoBtn{
+  display: none
+}

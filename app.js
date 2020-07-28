@@ -53,19 +53,19 @@ App({
             }
           })
         } else {
-          wx.showToast({
-            title: '请授权登录！',
-            icon: 'none',
-            duration: 1500,
-            success: function () {
-              //定时器，未授权1.5秒后跳转授权页面
-              setTimeout(function () {
-                wx.reLaunch({
-                  url: '../login/login',
-                })
-              }, 1500);
-            }
-          })
+          // wx.showToast({
+          //   title: '请授权登录！',
+          //   icon: 'none',
+          //   duration: 1500,
+          //   success: function () {
+          //     //定时器，未授权1.5秒后跳转授权页面
+          //     setTimeout(function () {
+          //       wx.reLaunch({
+          //         url: '../login/login',
+          //       })
+          //     }, 1500);
+          //   }
+          // })
         }
       }
     })

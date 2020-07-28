@@ -8,8 +8,9 @@ Page({
       password: '',
     }
   },
-  onShow:function(){
+  onShow: function() {
     wx.hideHomeButton();
+    console.log(wx.getAccountInfoSync().miniProgram)
   },
   login() {
     console.log(1111)
@@ -69,13 +70,13 @@ Page({
   },
   login() {
     console.log(this.data.form)
-    login(this.data.form).then(res => {
-      console.log(res)
-      setTimeout(function() {
-        wx.reLaunch({
-          url: '../my/my',
-        })
-      }, 1500);
-    })
+    // login(this.data.form).then(res => {
+    //   console.log(res)
+    //   setTimeout(function() {
+    //     wx.reLaunch({
+    //       url: '../my/my',
+    //     })
+    //   }, 1500);
+    // })
   }
 })

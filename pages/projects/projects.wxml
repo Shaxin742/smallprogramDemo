@@ -1,6 +1,6 @@
 <view class='test'>
   <swiper display-multiple-items='1' previous-margin='100rpx' next-margin='100rpx' circular bindchange='swiperChange' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="{{imgUrls}}" wx:key='{{index}}'>
+    <block wx:for="{{imgUrls}}" wx:key='index'>
       <swiper-item bindtap='swiperTap' item-id='item.id' data-id='{{item.id}}' data-index='{{index}}'>
         <view class="box {{index===swiperCurrent?'curr':''}}">
           <image src='{{item.url}}' mode="widthFix"></image>

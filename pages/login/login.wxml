@@ -8,5 +8,6 @@
   </view>
   <!-- <button catchtap="login">登录</button>
 <button catchtap="test">post</button> -->
-  <button open-type="login" bindgetuserinfo="getUserInfo" catchtap="login"> 获取头像昵称 </button>
+  <button open-type="login" bindgetuserinfo="getUserInfo" id="getUserInfoBtn" class="getUserInfoBtn"> 登录 </button>
+  <button  catchtap="login"> 登录 </button>
 </view>

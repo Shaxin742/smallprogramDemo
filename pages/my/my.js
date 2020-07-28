@@ -108,8 +108,8 @@ Page({
     innerAudioContext.src = 'http://qiniudns.shaxin741.vip/limingqiandeheian.mp3'
     console.log(innerAudioContext.src)
     // innerAudioContext.src = 'https://music.163.com/song?id=1349292048&userid=571759763'
-    // this.play() // 播放歌曲
-    // this.addAnimate() // 歌曲背景转动
+    this.play() // 播放歌曲
+    this.addAnimate() // 歌曲背景转动
     this.initChart() // echarts展示
     innerAudioContext.onEnded((res) => {
       this.play()
