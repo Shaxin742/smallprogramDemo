@@ -2,6 +2,9 @@
 import {
   myRequest
 } from '../../utils/request.js'
+import {
+  getSongs
+} from '../../api/login.js'
 Page({
   data: {
 
@@ -27,14 +30,24 @@ Page({
   },
   test() {
     let data = {
-      name: 1
+      name: '周'
     }
+    // getSongs(data).then(res => {
+    //   console.log(res)
+    // })
     myRequest(
-      "/user/login", {
-        method: 'post',
+      "/components/getSongs", {
+        method: 'get',
         data
       }).then(res => {
       console.log(res)
     })
+    // myRequest(
+    //   "/user/login", {
+    //     method: 'post',
+    //     data
+    //   }).then(res => {
+    //   console.log(res)
+    // })
   }
 })

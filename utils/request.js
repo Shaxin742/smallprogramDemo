@@ -58,6 +58,9 @@ export function myRequest(url, options) {
   Object.assign(defaultOptions, options)
 
   console.log(defaultOptions)
+  defaultOptions.headers = {
+      'content-type': 'application/json',
+    }
   // if (!(options.body instanceof FormData)) {
   //   defaultOptions.headers = {
   //     'content-type': 'application/json',
