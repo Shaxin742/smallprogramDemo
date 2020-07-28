@@ -1,5 +1,12 @@
 <!--pages/login/login.wxml-->
 <view>
-<button catchtap="login">登录</button>
-<button catchtap="test">登录</button>
+  <view>
+    <input type="text" placeholder="请输入用户名" class="inp-holder" maxlength="11" bindinput="nameChange" />
+  </view>
+  <view>
+    <input type="password" placeholder="请输入密码" class="inp-holder" maxlength="11" bindinput="pwChange" />
+  </view>
+  <!-- <button catchtap="login">登录</button>
+<button catchtap="test">post</button> -->
+  <button open-type="login" bindgetuserinfo="getUserInfo" catchtap="login"> 获取头像昵称 </button>
 </view>

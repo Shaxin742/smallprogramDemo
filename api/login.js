@@ -1,10 +1,9 @@
 import {
   myRequest
 } from '../utils/request.js'
-export function getSongs(data) {
-  console.log(data)
+export function login(data) {
   return myRequest(
-      `user/login`,
+      `/user/login`,
       {
         method: 'post',
         data

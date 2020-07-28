@@ -1,13 +1,15 @@
-// pages/login/login.js
 import {
-  myRequest
-} from '../../utils/request.js'
-import {
-  getSongs
+  login
 } from '../../api/login.js'
 Page({
   data: {
-
+    form: {
+      username: '',
+      password: '',
+    }
+  },
+  onShow:function(){
+    wx.hideHomeButton();
   },
   login() {
     console.log(1111)
@@ -32,16 +34,16 @@ Page({
     let data = {
       name: '周'
     }
-    // getSongs(data).then(res => {
-    //   console.log(res)
-    // })
-    myRequest(
-      "/components/getSongs", {
-        method: 'get',
-        data
-      }).then(res => {
+    getSongs(data).then(res => {
       console.log(res)
     })
+    // myRequest(
+    //   "/components/getSongs", {
+    //     method: 'get',
+    //     data
+    //   }).then(res => {
+    //   console.log(res)
+    // })
     // myRequest(
     //   "/user/login", {
     //     method: 'post',
@@ -49,5 +51,31 @@ Page({
     //   }).then(res => {
     //   console.log(res)
     // })
+  },
+
+  nameChange: function(e) {
+    var val = e.detail.value;
+    let name = 'form.username'
+    this.setData({
+      [name]: val
+    });
+  },
+  pwChange: function(e) {
+    var val = e.detail.value;
+    let pw = 'form.password'
+    this.setData({
+      [pw]: val
+    });
+  },
+  login() {
+    console.log(this.data.form)
+    login(this.data.form).then(res => {
+      console.log(res)
+      setTimeout(function() {
+        wx.reLaunch({
+          url: '../my/my',
+        })
+      }, 1500);
+    })
   }
 })

@@ -1,1 +1,13 @@
 /* pages/login/login.wxss */
+.inp-holder{
+  height: 30px;
+  margin: 10px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #333;
+}
+button{
+  width: 240px;
+  margin: 0 auto;
+  background: greenyellow;
+}
